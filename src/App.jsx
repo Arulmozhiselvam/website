@@ -9,41 +9,58 @@ import { ArrowUpRight, Sun, Moon } from 'lucide-react'
 gsap.registerPlugin(ScrollTrigger)
 
 // ── NAVIGATION COMPONENT ──
-const Navbar = ({ theme, toggleTheme, scrolled }) => (
-  <nav className={scrolled ? 'scrolled' : ''} style={{
-    padding: scrolled ? '20px 80px' : '40px 80px',
-    background: scrolled ? 'var(--bg)' : 'transparent',
-    borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
-    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-    position: 'fixed', top: 0, width: '100%', zIndex: 2000, transition: 'all 0.4s'
-  }}>
-    <Link to="/" className="logo" style={{textDecoration: 'none'}}>
-      <img 
-        src={theme === 'dark' ? "/assets/Group 1686556745.png" : "/assets/Group 1686556744.png"} 
-        alt="FromZero" 
-        style={{height: theme === 'dark' ? '32px' : '24px', display: 'block'}} 
-      />
-    </Link>
-    <div style={{display: 'flex', gap: '3.5rem', alignItems: 'center'}}>
-      {['Services', 'Work', 'Pricing'].map(item => (
-        <Link key={item} to={`/${item.toLowerCase()}`} style={{
-          fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: '800',
-          color: 'var(--muted)', textDecoration: 'none', transition: 'color 0.3s'
-        }} onMouseEnter={(e) => e.target.style.color = 'var(--text)'} 
-           onMouseLeave={(e) => e.target.style.color = 'var(--muted)'}>
-          {item}
-        </Link>
-      ))}
-      <button onClick={toggleTheme} style={{background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', display: 'flex'}}>
-        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
-    </div>
-    <Link to="/contact" className="nav-cta" style={{
-      background: 'var(--text)', color: 'var(--bg)', border: 'none', fontWeight: '900', textTransform: 'uppercase', textDecoration: 'none'
+const Navbar = ({ theme, toggleTheme, scrolled, menuOpen, setMenuOpen }) => (
+  <>
+    <nav className={scrolled ? 'scrolled' : ''} style={{
+      padding: scrolled ? '15px 30px' : '30px 30px',
+      background: scrolled ? 'var(--bg)' : 'transparent',
+      borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
+      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+      position: 'fixed', top: 0, width: '100%', zIndex: 3000, transition: 'all 0.4s'
     }}>
-      Book Audit
-    </Link>
-  </nav>
+      <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
+        <img 
+          src={theme === 'dark' ? "/assets/Group 1686556745.png" : "/assets/Group 1686556744.png"} 
+          alt="FromZero" 
+          style={{height: '24px', display: 'block'}} 
+        />
+      </Link>
+      
+      <div className="desktop-nav" style={{display: 'flex', gap: '3.5rem', alignItems: 'center'}}>
+        {['Services', 'Work', 'Pricing'].map(item => (
+          <Link key={item} to={`/${item.toLowerCase()}`} className="nav-link">
+            {item}
+          </Link>
+        ))}
+      </div>
+
+      <div style={{display: 'flex', gap: '1.5rem', alignItems: 'center'}}>
+        <button onClick={toggleTheme} className="theme-toggle">
+          {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
+        <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    {/* MOBILE MENU OVERLAY */}
+    <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+      <div className="mobile-menu-links">
+        {['Home', 'Services', 'Work', 'Pricing', 'Contact'].map((item, i) => (
+          <Link 
+            key={item} 
+            to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+            onClick={() => setMenuOpen(false)}
+            style={{transitionDelay: `${i * 0.1}s`}}
+          >
+            {item}
+          </Link>
+        ))}
+      </div>
+    </div>
+  </>
 )
 
 // ── PAGE COMPONENTS ──
@@ -274,6 +291,7 @@ const Pricing = () => (
 function AppContent() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
   const toggleTheme = () => {
@@ -341,7 +359,7 @@ function AppContent() {
       
       <div className="cursor" id="custom-cursor" />
 
-      <Navbar theme={theme} toggleTheme={toggleTheme} scrolled={scrolled} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} scrolled={scrolled} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       <Routes>
         <Route path="/" element={<Home theme={theme} />} />
