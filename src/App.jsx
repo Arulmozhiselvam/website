@@ -352,14 +352,17 @@ function AppContent() {
       </Routes>
 
       <footer style={{padding: '8rem 10%', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg)', position: 'relative', zIndex: 10}}>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem'}}>
-          <img src="/assets/Group 1686556744.png" alt="FromZero" style={{height: '24px', width: 'auto', objectFit: 'contain', filter: theme === 'dark' ? 'invert(1)' : 'none'}} />
-          <div style={{fontSize: '11px', color: 'var(--muted)', letterSpacing: '0.1em'}}>© 2024 FROMZERO. ENGINEERED GROWTH.</div>
+        <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
+          <img 
+            src={theme === 'dark' ? "/assets/Group 1686556745.png" : "/assets/Group 1686556744.png"} 
+            alt="FromZero" 
+            style={{height: '32px', display: 'block'}} 
+          />
         </div>
-        <div style={{display: 'flex', gap: '4rem'}}>
-          {['TWITTER', 'INSTAGRAM', 'LINKEDIN'].map(social => (
-            <a key={social} href="#" style={{fontSize: '11px', textDecoration: 'none', color: 'var(--text)', fontWeight: '900', letterSpacing: '0.15em'}}>{social}</a>
-          ))}
+        <div style={{display: 'flex', gap: '5rem'}}>
+          <a href="#" style={{fontSize: '12px', textDecoration: 'none', color: 'var(--muted)', fontWeight: '700'}}>TWITTER</a>
+          <a href="#" style={{fontSize: '12px', textDecoration: 'none', color: 'var(--muted)', fontWeight: '700'}}>INSTAGRAM</a>
+          <a href="#" style={{fontSize: '12px', textDecoration: 'none', color: 'var(--muted)', fontWeight: '700'}}>LINKEDIN</a>
         </div>
       </footer>
     </>
