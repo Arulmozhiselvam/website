@@ -41,6 +41,7 @@ const Navbar = ({ theme, toggleTheme, scrolled, menuOpen, setMenuOpen }) => (
         <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
           <span></span>
           <span></span>
+          <span></span>
         </button>
       </div>
     </nav>
@@ -58,6 +59,11 @@ const Navbar = ({ theme, toggleTheme, scrolled, menuOpen, setMenuOpen }) => (
             {item}
           </Link>
         ))}
+      </div>
+      <div className="mobile-menu-footer">
+        <a href="#">TWITTER</a>
+        <a href="#">INSTAGRAM</a>
+        <a href="#">LINKEDIN</a>
       </div>
     </div>
   </>
