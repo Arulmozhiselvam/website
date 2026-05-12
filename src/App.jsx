@@ -107,7 +107,7 @@ const Home = ({ theme }) => (
     <section style={{minHeight: 'auto', padding: '6rem 10%'}}>
       <div className="line-mask"><div className="sec-label">03 / Positioning</div></div>
       <div className="line-mask">
-        <h2 style={{fontSize: 'clamp(40px, 6vw, 100px)', lineHeight: '1.1'}}>
+        <h2 style={{fontSize: 'clamp(32px, 5vw, 80px)', lineHeight: '1.1'}}>
           Not an ads agency.<br />We <em>engineer</em> outcomes.
         </h2>
       </div>
