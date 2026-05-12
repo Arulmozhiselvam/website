@@ -50,13 +50,13 @@ const Navbar = ({ theme, toggleTheme, scrolled }) => (
 const Home = ({ theme }) => (
   <main>
     {/* HERO */}
-    <section id="hero" style={{paddingTop: '30vh'}}>
+    <section id="hero" className="hero-section">
       <div className="line-mask"><div className="sec-label">FZ // 001</div></div>
       <div className="line-mask"><h1>Growth isn't</h1></div>
       <div className="line-mask"><h1>random. We</h1></div>
       <div className="line-mask"><h1><em>engineer it.</em></h1></div>
       <div className="line-mask" style={{marginTop: '3rem'}}>
-        <p className="sub-text" style={{fontSize: '24px', maxWidth: '800px'}}>
+        <p className="sub-text" style={{maxWidth: '800px'}}>
           Growth engineering for D2C brands doing ₹10L–₹50L/month. 
           We diagnose bottlenecks, fix what's broken, and build systems that scale.
         </p>
