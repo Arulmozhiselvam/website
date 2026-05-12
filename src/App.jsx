@@ -111,7 +111,7 @@ const Home = ({ theme }) => (
           Not an ads agency.<br />We <em>engineer</em> outcomes.
         </h2>
       </div>
-      <div className="reveal" style={{marginTop: '4rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem'}}>
+      <div className="reveal grid-2" style={{marginTop: '4rem'}}>
         <p className="sub-text">
           We don't run random ads / We build growth systems. We don't promise hacks / We engineer outcomes. We don't bill for hours / We're paid for results.
         </p>
@@ -132,7 +132,7 @@ const Home = ({ theme }) => (
           { n: '02 Fix', d: 'Offer architecture, LP conversion, post-purchase flows. We close the leaks.' },
           { n: '03 Scale', d: 'Documented playbooks. Predictable CAC bands. Compounding revenue.' }
         ].map((s, i) => (
-          <div key={i} className="reveal" style={{padding: '4rem 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <div key={i} className="reveal flex-between method-item" style={{padding: '4rem 0', borderBottom: '1px solid var(--border)'}}>
             <h3 style={{fontSize: 'clamp(30px, 4vw, 60px)', fontWeight: '900', textTransform: 'uppercase'}}>{s.n}</h3>
             <div className="sub-text" style={{maxWidth: '400px', fontSize: '14px'}}>{s.d}</div>
           </div>
@@ -149,7 +149,7 @@ const Home = ({ theme }) => (
         <div className="line-mask"><h2>Recent</h2></div>
         <div className="line-mask"><h2>Deployments.</h2></div>
         
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginTop: '4rem'}}>
+        <div className="grid-2" style={{marginTop: '4rem'}}>
           {[
             { t: 'Studio Thari', c: 'Luxury Ethnic Wear', img: '/assets/studiothari.png' },
             { t: 'Sieben Tech', c: 'Premium Audio & Earbuds', img: '/assets/sieben.png' }
@@ -175,7 +175,7 @@ const Home = ({ theme }) => (
     <section style={{background: 'var(--text)', color: 'var(--bg)'}}>
       <div className="line-mask"><div className="sec-label" style={{color: 'var(--bg)'}}>Track Record</div></div>
       <div className="line-mask">
-        <h2 style={{color: 'var(--bg)', fontSize: 'clamp(30px, 5vw, 60px)', italic: 'true'}}>
+        <h2 style={{color: 'var(--bg)', fontSize: 'clamp(30px, 5vw, 60px)', fontStyle: 'italic'}}>
           "We were stuck at ₹22L for nine months. Three weeks in, they pointed out two things we'd been ignoring — repeat rate and creative fatigue. We crossed ₹50L the next quarter."
         </h2>
       </div>
@@ -190,15 +190,15 @@ const Home = ({ theme }) => (
       <div className="line-mask"><div className="sec-label">Investment</div></div>
       <div className="line-mask"><h2>Tier-1</h2></div>
       <div className="line-mask"><h2>Engagements.</h2></div>
-      <div style={{marginTop: '5rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border)'}}>
+      <div className="grid-3" style={{marginTop: '5rem'}}>
         {[
           { n: 'Strategy', p: '₹75k' },
           { n: 'Growth Partner', p: '₹150k', f: true },
           { n: 'Enterprise', p: 'Custom' }
         ].map((p, i) => (
-          <div key={i} className="reveal" style={{padding: '6rem 3rem', background: 'var(--bg)', border: p.f ? '2px solid var(--text)' : 'none'}}>
+          <div key={i} className="reveal pricing-card" style={{padding: '6rem 3rem', background: 'var(--bg)', border: p.f ? '2px solid var(--text)' : 'none'}}>
             <h3 style={{fontSize: '28px', fontWeight: '900', textTransform: 'uppercase'}}>{p.n}</h3>
-            <div style={{fontSize: '56px', fontWeight: '900', margin: '2rem 0'}}>{p.p}</div>
+            <div className="price" style={{fontSize: '56px', fontWeight: '900', margin: '2rem 0'}}>{p.p}</div>
             <button style={{width: '100%', padding: '20px', background: p.f ? 'var(--text)' : 'transparent', color: p.f ? 'var(--bg)' : 'var(--text)', border: '1px solid var(--text)', fontWeight: '900'}}>REQUEST PROPOSAL</button>
           </div>
         ))}
@@ -228,12 +228,12 @@ const Services = () => (
           { n: 'Interactive 3D', d: 'High-end WebGL and immersive interfaces.' },
           { n: 'Growth Engineering', d: 'Performance ads and automated funnel scaling.' }
         ].map((s, i) => (
-          <div key={i} className="reveal" style={{padding: '5rem 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <div key={i} className="reveal flex-between method-item" style={{padding: '5rem 0', borderBottom: '1px solid var(--border)'}}>
             <div>
               <h3 style={{fontSize: '56px', fontWeight: '900', textTransform: 'uppercase'}}>{s.n}</h3>
               <p style={{marginTop: '1rem', color: 'var(--muted)', fontSize: '16px'}}>{s.d}</p>
             </div>
-            <ArrowUpRight size={40} />
+            <ArrowUpRight size={40} className="mobile-hide" />
           </div>
         ))}
       </div>
@@ -247,7 +247,7 @@ const Work = () => (
       <div className="line-mask"><div className="sec-label">Selected Impact</div></div>
       <div className="line-mask"><h2>Recent</h2></div>
       <div className="line-mask"><h2>Deployments.</h2></div>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '50px', marginTop: '6rem'}}>
+      <div className="grid-2" style={{marginTop: '6rem'}}>
         {[
           { t: 'Studio Thari', c: 'Luxury Ethnic Wear', n: '01', img: '/assets/studiothari.png' },
           { t: 'Sieben Tech', c: 'Premium Audio & Earbuds', n: '02', img: '/assets/sieben.png' },
@@ -276,15 +276,15 @@ const Pricing = () => (
       <div className="line-mask"><div className="sec-label">Investment</div></div>
       <div className="line-mask"><h2>Strategic</h2></div>
       <div className="line-mask"><h2>Partnership.</h2></div>
-      <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border)', marginTop: '6rem'}}>
+      <div className="grid-3" style={{marginTop: '6rem'}}>
         {[
           { n: 'Strategy', p: '₹75k' },
           { n: 'Growth Partner', p: '₹150k', f: true },
           { n: 'Enterprise', p: 'Custom' }
         ].map((p, i) => (
-          <div key={i} className="reveal" style={{padding: '8rem 4rem', background: 'var(--bg)', border: p.f ? '2px solid var(--text)' : 'none'}}>
+          <div key={i} className="reveal pricing-card" style={{padding: '8rem 4rem', background: 'var(--bg)', border: p.f ? '2px solid var(--text)' : 'none'}}>
             <h3 style={{fontSize: '40px', fontWeight: '900', textTransform: 'uppercase'}}>{p.n}</h3>
-            <div style={{fontSize: '80px', fontWeight: '900', margin: '3rem 0'}}>{p.p}</div>
+            <div className="price" style={{fontSize: '80px', fontWeight: '900', margin: '3rem 0'}}>{p.p}</div>
             <button style={{width: '100%', padding: '24px', background: p.f ? 'var(--text)' : 'transparent', color: p.f ? 'var(--bg)' : 'var(--text)', border: '1px solid var(--text)', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.1em'}}>Get Started</button>
           </div>
         ))}
@@ -375,7 +375,7 @@ function AppContent() {
         <Route path="/contact" element={<Home />} /> {/* Temporary redirect */}
       </Routes>
 
-      <footer style={{padding: '8rem 10%', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg)', position: 'relative', zIndex: 10}}>
+      <footer className="flex-between">
         <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
           <img 
             src={theme === 'dark' ? "/assets/Group 1686556745.png" : "/assets/Group 1686556744.png"} 
