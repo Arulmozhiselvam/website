@@ -78,7 +78,7 @@ const Home = ({ theme }) => (
       <div className="line-mask"><h1>Growth isn't</h1></div>
       <div className="line-mask"><h1>random. We</h1></div>
       <div className="line-mask"><h1><em>engineer it.</em></h1></div>
-      <div className="line-mask" style={{marginTop: '3rem'}}>
+      <div className="line-mask" style={{marginTop: '2rem'}}>
         <p className="sub-text" style={{maxWidth: '800px'}}>
           Growth engineering for D2C brands doing ₹10L–₹50L/month. 
           We diagnose bottlenecks, fix what's broken, and build systems that scale.
@@ -86,9 +86,9 @@ const Home = ({ theme }) => (
       </div>
     </section>
     {/* 02 / SYMPTOMS */}
-    <section style={{minHeight: 'auto', padding: '10rem 10%', background: 'var(--text)', color: 'var(--bg)'}}>
+    <section style={{minHeight: 'auto', padding: '6rem 10%', background: 'var(--text)', color: 'var(--bg)'}}>
       <div className="line-mask"><div className="sec-label" style={{color: 'var(--bg)'}}>02 / Symptoms</div></div>
-      <div className="reveal" style={{marginTop: '4rem'}}>
+      <div className="reveal" >
         {[
           '01 Ads are running. Growth isn\'t compounding.',
           '02 Revenue moves. Margins don\'t.',
@@ -97,21 +97,21 @@ const Home = ({ theme }) => (
         ].map((s, i) => (
           <div key={i} className="line-mask"><h3 style={{color: 'var(--bg)', fontSize: 'clamp(24px, 4vw, 48px)', marginBottom: '1.5rem'}}>{s}</h3></div>
         ))}
-        <div className="reveal" style={{marginTop: '5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '3rem'}}>
+        <div className="reveal" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '3rem'}}>
           <h2 style={{color: 'var(--bg)', fontSize: '40px'}}>This isn't a marketing problem. <br />It's a <span style={{color: 'var(--primary)'}}>system problem.</span></h2>
         </div>
       </div>
     </section>
 
     {/* 03 / POSITIONING */}
-    <section style={{minHeight: 'auto', padding: '10rem 10%'}}>
+    <section style={{minHeight: 'auto', padding: '6rem 10%'}}>
       <div className="line-mask"><div className="sec-label">03 / Positioning</div></div>
       <div className="line-mask">
         <h2 style={{fontSize: 'clamp(40px, 6vw, 100px)', lineHeight: '1.1'}}>
           Not an ads agency.<br />We <em>engineer</em> outcomes.
         </h2>
       </div>
-      <div className="reveal grid-2" style={{marginTop: '4rem'}}>
+      <div className="reveal grid-2" style={{marginTop: '2.5rem'}}>
         <p className="sub-text">
           We don't run random ads / We build growth systems. We don't promise hacks / We engineer outcomes. We don't bill for hours / We're paid for results.
         </p>
@@ -126,7 +126,7 @@ const Home = ({ theme }) => (
       <div className="line-mask"><div className="sec-label">04 / Method</div></div>
       <div className="line-mask"><h2>Three steps.</h2></div>
       <div className="line-mask"><h2>One system.</h2></div>
-      <div style={{marginTop: '5rem'}}>
+      <div className="section-top-margin">
         {[
           { n: '01 Diagnose', d: 'Funnel audit. Cohort math. Channel attribution. We read your numbers.' },
           { n: '02 Fix', d: 'Offer architecture, LP conversion, post-purchase flows. We close the leaks.' },
@@ -144,7 +144,7 @@ const Home = ({ theme }) => (
     {/* FEATURED WORK */}
     <section>
       {/* PROJECT PREVIEW */}
-      <div style={{marginTop: '8rem'}}>
+      <div className="section-top-margin">
         <div className="line-mask"><div className="sec-label">Selected Impact</div></div>
         <div className="line-mask"><h2>Recent</h2></div>
         <div className="line-mask"><h2>Deployments.</h2></div>
@@ -190,7 +190,7 @@ const Home = ({ theme }) => (
       <div className="line-mask"><div className="sec-label">Investment</div></div>
       <div className="line-mask"><h2>Tier-1</h2></div>
       <div className="line-mask"><h2>Engagements.</h2></div>
-      <div className="grid-3" style={{marginTop: '5rem'}}>
+      <div className="grid-3 section-top-margin">
         {[
           { n: 'Strategy', p: '₹75k' },
           { n: 'Growth Partner', p: '₹150k', f: true },
@@ -206,7 +206,7 @@ const Home = ({ theme }) => (
     </section>
 
     {/* FINAL CTA */}
-    <section id="cta" style={{textAlign: 'center', padding: '15rem 10%'}}>
+    <section id="cta" style={{textAlign: 'center', padding: '6rem 10%'}}>
       <div className="line-mask"><div className="sec-label">The Future</div></div>
       <div className="line-mask"><h2 style={{fontSize: 'clamp(50px, 12vw, 200px)'}}>Let's</h2></div>
       <div className="line-mask"><h2 style={{fontSize: 'clamp(50px, 12vw, 200px)'}}>Scale.</h2></div>
@@ -216,12 +216,12 @@ const Home = ({ theme }) => (
 )
 
 const Services = () => (
-  <main style={{paddingTop: '20vh'}}>
+  <main style={{paddingTop: '12vh'}}>
     <section>
       <div className="line-mask"><div className="sec-label">Our Expertise</div></div>
       <div className="line-mask"><h2>Full-Spectrum</h2></div>
       <div className="line-mask"><h2>Engineering.</h2></div>
-      <div style={{marginTop: '6rem'}}>
+      <div className="section-top-margin">
         {[
           { n: 'Shopify Architecture', d: 'Conversion-centric Liquid & Hydrogen development.' },
           { n: 'Brand Identity', d: 'Visual systems and category positioning.' },
@@ -242,12 +242,12 @@ const Services = () => (
 )
 
 const Work = () => (
-  <main style={{paddingTop: '20vh'}}>
+  <main style={{paddingTop: '12vh'}}>
     <section>
       <div className="line-mask"><div className="sec-label">Selected Impact</div></div>
       <div className="line-mask"><h2>Recent</h2></div>
       <div className="line-mask"><h2>Deployments.</h2></div>
-      <div className="grid-2" style={{marginTop: '6rem'}}>
+      <div className="grid-2 section-top-margin">
         {[
           { t: 'Studio Thari', c: 'Luxury Ethnic Wear', n: '01', img: '/assets/studiothari.png' },
           { t: 'Sieben Tech', c: 'Premium Audio & Earbuds', n: '02', img: '/assets/sieben.png' },
@@ -271,12 +271,12 @@ const Work = () => (
 )
 
 const Pricing = () => (
-  <main style={{paddingTop: '20vh'}}>
+  <main style={{paddingTop: '12vh'}}>
     <section>
       <div className="line-mask"><div className="sec-label">Investment</div></div>
       <div className="line-mask"><h2>Strategic</h2></div>
       <div className="line-mask"><h2>Partnership.</h2></div>
-      <div className="grid-3" style={{marginTop: '6rem'}}>
+      <div className="grid-3 section-top-margin">
         {[
           { n: 'Strategy', p: '₹75k' },
           { n: 'Growth Partner', p: '₹150k', f: true },
@@ -375,7 +375,7 @@ function AppContent() {
         <Route path="/contact" element={<Home />} /> {/* Temporary redirect */}
       </Routes>
 
-      <footer className="flex-between">
+      <footer className="flex-between" style={{padding: '4rem 10%'}}>
         <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
           <img 
             src={theme === 'dark' ? "/assets/Group 1686556745.png" : "/assets/Group 1686556744.png"} 
