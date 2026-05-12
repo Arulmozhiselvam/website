@@ -39,7 +39,7 @@ const Navbar = ({ theme, toggleTheme, scrolled }) => (
       </button>
     </div>
     <Link to="/contact" className="nav-cta" style={{
-      padding: '14px 40px', background: 'var(--text)', color: 'var(--bg)', border: 'none', fontWeight: '900', textTransform: 'uppercase', fontSize: '12px', textDecoration: 'none'
+      background: 'var(--text)', color: 'var(--bg)', border: 'none', fontWeight: '900', textTransform: 'uppercase', textDecoration: 'none'
     }}>
       Book Audit
     </Link>
@@ -187,7 +187,7 @@ const Home = ({ theme }) => (
       <div className="line-mask"><div className="sec-label">The Future</div></div>
       <div className="line-mask"><h2 style={{fontSize: 'clamp(50px, 12vw, 200px)'}}>Let's</h2></div>
       <div className="line-mask"><h2 style={{fontSize: 'clamp(50px, 12vw, 200px)'}}>Scale.</h2></div>
-      <Link to="/contact" className="nav-cta reveal" style={{marginTop: '5rem', padding: '25px 80px', fontSize: '18px', display: 'inline-block', textDecoration: 'none'}}>Book Free Growth Audit</Link>
+      <Link to="/contact" className="nav-cta reveal hero-cta">Book Free Growth Audit</Link>
     </section>
   </main>
 )

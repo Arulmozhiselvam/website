@@ -83,6 +83,8 @@ h1, h2 {
   line-height: 0.9;
   letter-spacing: -0.06em;
   text-transform: uppercase;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 h1 { font-size: clamp(90px, 18vw, 220px); margin-bottom: 4rem; }
@@ -104,6 +106,19 @@ em {
 
 nav { transition: all 0.4s; }
 nav.scrolled { backdrop-filter: blur(20px); }
+
+.nav-cta {
+  padding: 14px 40px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.hero-cta {
+  margin-top: 5rem;
+  padding: 25px 80px;
+  font-size: 18px;
+  display: inline-block;
+}
 
 .work-card { cursor: pointer; }
 .work-card:hover h4 { color: var(--accent); }
@@ -156,14 +171,27 @@ body::after {
     justify-content: space-between;
   }
   
+  .nav-cta {
+    padding: 10px 20px !important;
+    font-size: 10px !important;
+  }
+
+  .hero-cta {
+    margin-top: 3rem !important;
+    padding: 18px 40px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  
   nav .nav-cta { display: none; }
   nav div { gap: 1.2rem !important; }
   
-  section { padding: 6rem 6% !important; min-height: auto !important; }
+  section { padding: 5rem 6% !important; min-height: auto !important; }
   .hero-section { padding-top: 15vh !important; }
   
-  h1 { font-size: clamp(40px, 15vw, 65px) !important; margin-bottom: 2rem !important; }
-  h2 { font-size: clamp(30px, 10vw, 45px) !important; margin-bottom: 1.5rem !important; }
+  h1 { font-size: clamp(38px, 12vw, 55px) !important; margin-bottom: 2rem !important; }
+  h2 { font-size: clamp(28px, 8vw, 40px) !important; margin-bottom: 1.5rem !important; }
   .sub-text { font-size: 16px !important; }
   .sec-label { margin-bottom: 1.5rem !important; }
 
@@ -176,6 +204,6 @@ body::after {
   /* Adjust work cards for mobile */
   .work-card div[style*='height: 600px'],
   .work-card div[style*='height: 500px'] {
-    height: 350px !important;
+    height: 300px !important;
   }
 }
